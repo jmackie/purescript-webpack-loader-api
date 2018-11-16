@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -eu
+
+DOCS_DIR=docs
+
+echo "Writing docs..."
+
+purs docs "src/**/*.purs" ".psc-package/*/*/*/src/**/*.purs" \
+    --docgen Webpack.Loader:$DOCS_DIR/Webpack.Loader.md
+
+git add $DOCS_DIR
+
+exit 0
