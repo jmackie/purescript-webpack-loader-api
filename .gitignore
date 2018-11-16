@@ -1,0 +1,9 @@
+# Dependencies
+.psci_modules
+bower_components
+node_modules
+.psc-package
+
+# Generated files
+.psci
+output
