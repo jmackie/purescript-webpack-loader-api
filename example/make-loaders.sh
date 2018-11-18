@@ -7,6 +7,8 @@ LOADER_BINDING=loader
 OUTPUT=./src/loaders/hello-loader.js
 
 WEBPACK_ENTRY=$(mktemp -p .)
+# Need to get the webpack.config.js out the way so
+# webpack doesn't try and use it here
 mv webpack.config.js _webpack.bak
 clean_up() {
     ARG=$?
