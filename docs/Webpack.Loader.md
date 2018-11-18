@@ -68,6 +68,14 @@ request :: LoaderContext -> String
 
 https://webpack.js.org/api/loaders/#this-request
 
+#### `query`
+
+``` purescript
+query :: LoaderContext -> Either String (Object Foreign)
+```
+
+https://webpack.js.org/api/loaders/#this-query
+
 #### `cacheable`
 
 ``` purescript

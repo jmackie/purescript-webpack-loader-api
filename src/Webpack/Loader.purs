@@ -7,6 +7,7 @@ module Webpack.Loader
     , context
     , rootContext
     , request
+    , query
     , cacheable
     , loaderIndex
     , addDependency
@@ -112,6 +113,26 @@ request :: LoaderContext -> String
 request = unsafeReadLoaderContext
     (ForeignIndex.readProp "request" >=> Foreign.readString)
     "Bad request"
+
+
+-- | https://webpack.js.org/api/loaders/#this-query
+query :: LoaderContext -> Either String (Object Foreign)
+query = unsafeReadLoaderContext
+    (ForeignIndex.readProp "query" >=> readQuery)
+    "Bad query"
+  where
+    readQuery :: Foreign -> F (Either String (Object Foreign))
+    readQuery value =
+        case Foreign.typeOf value of
+             "string" ->
+                Left <$> Foreign.readString value
+
+             "object" ->
+                pure (Right (unsafeFromForeign value))
+
+             other    ->
+                 Foreign.fail <<< Foreign.ForeignError $
+                     "Expecting a string or an object, got " <> other
 
 
 -- | https://webpack.js.org/api/loaders/#this-cacheable
