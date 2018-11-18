@@ -22,6 +22,7 @@ cat <<EOF >"$WEBPACK_ENTRY"
 module.exports=require('${LOADER_MODULE}').${LOADER_BINDING};
 EOF
 
+psc-package build
 ./node_modules/.bin/webpack \
     --mode production \
     --target node \

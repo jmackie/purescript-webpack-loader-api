@@ -18,7 +18,7 @@ module.exports = {
                 use: [
                     {
                         loader: 'hello-loader',
-                        options: {},
+                        options: { debug: true },
                     },
                 ],
                 exclude: /(node_modules)/,

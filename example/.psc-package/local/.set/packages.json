@@ -109,6 +109,13 @@
     "repo": "https://github.com/purescript/purescript-datetime.git",
     "version": "v4.0.0"
   },
+  "debug": {
+    "dependencies": [
+      "prelude"
+    ],
+    "repo": "https://github.com/garyb/purescript-debug.git",
+    "version": "v4.0.0"
+  },
   "distributive": {
     "dependencies": [
       "identity",
@@ -531,6 +538,6 @@
       "transformers"
     ],
     "repo": "https://github.com/jmackie/purescript-webpack-loader-api.git",
-    "version": "v0.1.0"
+    "version": "v0.2.0"
   }
 }

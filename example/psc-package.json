@@ -2,5 +2,5 @@
     "name": "example",
     "set": "local",
     "source": "",
-    "depends": ["console", "prelude", "webpack-loader-api"]
+    "depends": ["console", "prelude", "webpack-loader-api", "debug"]
 }
