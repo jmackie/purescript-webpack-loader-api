@@ -2,6 +2,7 @@ module Webpack.Loader
     ( Loader
     , mkSyncLoader
     , mkAsyncLoader
+    , Result
     , LoaderContext
     , version
     , context

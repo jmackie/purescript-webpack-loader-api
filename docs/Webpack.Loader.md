@@ -28,6 +28,14 @@ Create an asynchronous loader.
 
 https://webpack.js.org/api/loaders/#asynchronous-loaders
 
+#### `Result`
+
+``` purescript
+type Result = { source :: Buffer }
+```
+
+The return type of a webpack `Loader`.
+
 #### `LoaderContext`
 
 ``` purescript
