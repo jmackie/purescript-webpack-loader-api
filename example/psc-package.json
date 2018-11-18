@@ -1,6 +1,6 @@
 {
     "name": "example",
-    "set": "webpack-loader-api",
-    "source": "https://github.com/jmackie/package-sets.git",
+    "set": "local",
+    "source": "",
     "depends": ["console", "prelude", "webpack-loader-api"]
 }
