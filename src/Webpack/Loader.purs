@@ -13,6 +13,7 @@ module Webpack.Loader
     , loaderIndex
     , addDependency
     , addContextDependency
+    , emitError
     , resourcePath
     )
 where
@@ -28,6 +29,7 @@ import Data.Foldable (intercalate)
 import Data.Tuple (Tuple(Tuple))
 import Effect (Effect)
 import Effect.Aff (Aff)
+import Effect.Exception as Exception
 import Effect.Uncurried (runEffectFn1, EffectFn2, mkEffectFn2)
 import Foreign (Foreign, F, unsafeToForeign, unsafeFromForeign)
 import Foreign as Foreign
@@ -184,6 +186,18 @@ addContextDependency directory loaderContext =
             loaderContext
         )
         directory
+
+
+-- | https://webpack.js.org/api/loaders/#this-emitError
+emitError :: forall a. Exception.Error -> LoaderContext -> Effect a
+emitError error loaderContext =
+    runEffectFn1
+        (unsafeReadLoaderContext
+            (ForeignIndex.readProp "emitError" >=> readFunction)
+            "Couldn't call emitError"
+            loaderContext
+        )
+        error
 
 
 -- UTIL
