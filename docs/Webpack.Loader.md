@@ -119,7 +119,7 @@ https://webpack.js.org/api/loaders/#this-adddependency
 #### `emitError`
 
 ``` purescript
-emitError :: forall a. Error -> LoaderContext -> Effect a
+emitError :: Error -> LoaderContext -> Effect Unit
 ```
 
 https://webpack.js.org/api/loaders/#this-emitError

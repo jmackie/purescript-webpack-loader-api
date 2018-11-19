@@ -189,7 +189,7 @@ addContextDependency directory loaderContext =
 
 
 -- | https://webpack.js.org/api/loaders/#this-emitError
-emitError :: forall a. Exception.Error -> LoaderContext -> Effect a
+emitError :: Exception.Error -> LoaderContext -> Effect Unit
 emitError error loaderContext =
     runEffectFn1
         (unsafeReadLoaderContext
