@@ -538,6 +538,6 @@
       "transformers"
     ],
     "repo": "https://github.com/jmackie/purescript-webpack-loader-api.git",
-    "version": "v0.2.0"
+    "version": "v0.4.0"
   }
 }
